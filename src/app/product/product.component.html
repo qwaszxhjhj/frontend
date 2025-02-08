@@ -1,0 +1,22 @@
+<nav class="navbar">
+    <div class="container">
+      <a class="brand" href="#">MyApp</a>
+      <ul class="nav-links">
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <div class="product-list">
+    <div *ngFor="let product of products" class="product-card">
+      <img src="{{ product.imageUrl }}" alt="{{ product.name }}"> 
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <p>Price: {{ product.price }}</p>
+      <p>Quantity: {{ product.quantity }}</p>
+      <p>Category: {{ product.category }}</p>
+      <button>Add to Cart</button> 
+    </div>
+  </div>

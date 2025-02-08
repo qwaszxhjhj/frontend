@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyApp</title>
+  </head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a class="brand" href="#">MyApp</a>
+      <ul class="nav-links">
+        <li><button (click)="navigateTo('user')">User</button></li>
+        <li><button (click)="navigateTo('product')">Product</button></li>
+        <li><button (click)="navigateTo('orders')">Orders</button></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="content">
+    <div *ngIf="user">
+      <h2>User Details</h2>
+      <table>
+        <tr>
+          <th>ID:</th>
+          <td>{{ user.uid }}</td>
+        </tr>
+        <tr>
+          <th>Name:</th>
+          <td>{{ user.name }}</td>
+        </tr>
+        <tr>
+          <th>Email:</th>
+          <td>{{ user.email }}</td>
+        </tr>
+        <tr>
+          <th>Password:</th>
+          <td>{{ user.password }}</td>
+        </tr>
+        <tr>
+          <th>Phone Number:</th>
+          <td>{{ user.phoneNumber || 'N/A' }}</td>
+        </tr>
+        <tr>
+          <th>Address:</th>
+          <td>{{ user.address || 'N/A' }}</td>
+        </tr>
+      </table>
+    </div>
+    <div *ngIf="!user">
+      <p>No user found. Please ensure the User ID is valid.</p>
+    </div>
+  </div>
+</body>
+
+<div *ngIf="user">
+  <h2>User Details</h2>
+  <form (ngSubmit)="updateUser()">
+    <table>
+      <tr>
+        <th>Name:</th>
+        <td><input type="text" [(ngModel)]="user.name"></td>
+      </tr>
+      <tr>
+        <th>Email:</th>
+        <td><input type="email" [(ngModel)]="user.email"></td>
+      </tr>
+      <tr>
+        <th>Password:</th>
+        <td><input type="password" [(ngModel)]="user.password"></td>
+      </tr>
+      <tr>
+        <th>Phone Number:</th>
+        <td><input type="text" [(ngModel)]="user.phoneNumber"></td>
+      </tr>
+      <tr>
+        <th>Address:</th>
+        <td><input type="text" [(ngModel)]="user.address"></td>
+      </tr>
+    </table>
+    <button type="submit">Update User</button>
+  </form>
+</div>
+</html>

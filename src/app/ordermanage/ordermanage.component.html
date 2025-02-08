@@ -1,0 +1,25 @@
+<div *ngIf="orders && orders.length > 0">
+    <h2>Order Management</h2>
+    <ul>
+      <li *ngFor="let order of orders">
+        <div>
+          <p>Order ID: {{ order.orderId }}</p> 
+          <p>User ID: {{ order.user.uid }}</p> 
+          <p>Total Price: {{ order.totalPrice }}</p>
+          <p>Status: {{ order.status }}</p>
+        </div>
+        <div>
+          <h4>Order Products:</h4>
+          <ul *ngIf="order && order.orderProducts && order.orderProducts.length > 0">
+            <li *ngFor="let product of order.orderProducts">
+              {{ product.name || product.name }} 
+            </li> 
+          </ul>
+          <p *ngIf="!order || (!order.orderProducts || order.orderProducts.length === 0)">No order products found for this order.</p>
+        </div>
+        <button (click)="deleteOrder(order.orderId)">Delete</button> 
+      </li>
+    </ul>
+  </div>
+  
+  <p *ngIf="!orders || orders.length === 0">No orders found.</p>

@@ -1,0 +1,65 @@
+.navbar {
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
+.container {
+    display: flex; /* Enables flexbox for horizontal alignment */
+    justify-content: space-between; /* Distributes space between brand and links */
+    align-items: center; /* Vertically aligns items to the center */
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Arranges list items horizontally */
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* ... other styles */
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Distribute space between brand, button, and links */
+    align-items: center;
+}
+
+.load-user-button {
+    /* Basic button styling - customize as needed */
+    padding: 8px 16px;
+    background-color: #4CAF50; /* Example color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px; /* Rounded corners */
+}
+
+/* Optional: Add hover effect */
+.load-user-button:hover {
+    background-color: #45a049;
+}
+
+/* Ensure consistent height with nav links */
+.load-user-button {
+    height: fit-content; /* Adjust as needed */
+    margin-right: 20px; /* Space between button and links */
+}
+
+.nav-links {
+    /* ... other styles */
+    display: flex;  /* Ensure list items are horizontal */
+    align-items: center; /* Vertically align list items */
+}
+
+.nav-links li {
+    margin-left: 20px;
+}

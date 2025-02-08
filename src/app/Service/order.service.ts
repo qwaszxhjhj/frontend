@@ -1,26 +1,27 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { Order } from './order';
+import { Order } from '../Entity/order';
 import { environment } from "src/environments/environment";
 
 @Injectable({
     providedIn: 'root'
 })
 export class OrderService {
-    getOrders() {
-      throw new Error('Method not implemented.');
-    }
     private apiServerUrl = environment.apiBaseUrl;
 
     constructor(private http: HttpClient) {}
 
-    public getOrder(orderId: number): Observable<Order> {
-        return this.http.get<Order>(`${this.apiServerUrl}/orders/find/${orderId}`);
+    public getOrders(uid: number): Observable<Order[]> {
+        return this.http.get<Order[]>(`${this.apiServerUrl}/orders/find/${uid}`);
     }
 
-    public createOrder(order: Order): Observable<Order> {
-        return this.http.post<Order>(`${this.apiServerUrl}/orders/createOrder`, order);
+    public getAllOrders(): Observable<Order[]> {
+        return this.http.get<Order[]>(`${this.apiServerUrl}/orders/all`);
+    }
+
+    public createOrder(uid: number): Observable<Order> {
+        return this.http.post<Order>(`${this.apiServerUrl}/orders/createOrder/${uid}`, uid);
     }
 
     public updateOrder(orderId: number, order: Order): Observable<Order> {

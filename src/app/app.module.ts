@@ -10,6 +10,11 @@ import { RouterModule } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { ProductComponent } from './product/product.component';
 import { OrderComponent } from './order/order.component';
+import { LoginComponent } from './login/login.component';
+import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
+import { UsermanageComponent } from './usermanage/usermanage.component';
+import { ProductmanageComponent } from './productmanage/productmanage.component';
+import { OrdermanageComponent } from './ordermanage/ordermanage.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +22,11 @@ import { OrderComponent } from './order/order.component';
     UserComponent,
     ProductComponent,
     OrderComponent,
+    LoginComponent,
+    ShoppingcartComponent,
+    UsermanageComponent,
+    ProductmanageComponent,
+    OrdermanageComponent,
     
   ],
   imports: [

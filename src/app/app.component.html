@@ -1,5 +1,31 @@
-<form (ngSubmit)="onSubmit()">
-  <input type="number" name="uid" [(ngModel)]="uid" placeholder="Enter User ID" required>
-  <button type="submit" [disabled]="uid === null">Submit</button>
-</form>
+<nav class="navbar" *ngIf="showDefaultNav">  <div class="container">
+  <a class="brand" href="#">Home Page</a>
+  <button (click)="userLoadAndNavigate()" class="load-navigate-user-button">
+      User
+  </button>
+  <button (click)="productsNavigate()" class="navigate-products-button">
+      Products
+  </button>
+  <button (click)="shoppingcartNavigate()" class="navigate-cart-button">
+    Shopping Cart
+</button>
+  <button (click)="orderNavigate()" class="navigate-order-button">
+      Order
+  </button>
+  <button (click)="toggleNav()">Switch Nav</button> </div>
+</nav>
+
+<nav class="navbar" *ngIf="!showDefaultNav">  <div class="container">
+  <button (click)="userManagementNavigate()" class="load-navigate-userManage-button">
+    UserManagement
+</button>
+<button (click)="productManagementNavigate()" class="load-navigate-productManage-button">
+  ProductManagement
+</button>
+<button (click)="orderManagementNavigate()" class="load-navigate-orderManage-button">
+  OrderManagement
+</button>
+  <button (click)="toggleNav()">Switch Nav</button> </div>
+</nav>
+
 <router-outlet></router-outlet>

@@ -1,0 +1,15 @@
+<form (ngSubmit)="onSubmit()">
+    <input type="number" name="uid" [(ngModel)]="uid" placeholder="Enter User ID" required>
+    <button type="submit" [disabled]="uid === null">Login</button>
+</form>
+<p>-------------------</p>
+<form (ngSubmit)="createUser()">  <input type="text" name="name" [(ngModel)]="createdUser.name" placeholder="Name" required>
+    <input type="email" name="email" [(ngModel)]="createdUser.email" placeholder="Email" required>
+    <input type="password" name="password" [(ngModel)]="createdUser.password" placeholder="Password" required>
+    <input type="text" name="phoneNumber" [(ngModel)]="createdUser.phoneNumber" placeholder="Phone Number">
+    <input type="text" name="address" [(ngModel)]="createdUser.address" placeholder="Address">
+  
+    <button type="submit">Create User</button>
+  </form>
+
+<router-outlet></router-outlet>

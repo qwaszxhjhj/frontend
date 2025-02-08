@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>MyApp</title>
-  </head>
 <body>
-  <nav class="navbar">
-    <div class="container">
-      <a class="brand" href="#">MyApp</a>
-      <ul class="nav-links">
-        <li><button (click)="navigateTo('user')">User</button></li>
-        <li><button (click)="navigateTo('product')">Product</button></li>
-        <li><button (click)="navigateTo('orders')">Orders</button></li>
-      </ul>
-    </div>
-  </nav>
   <div class="content">
     <div *ngIf="user">
       <h2>User Details</h2>
@@ -52,29 +39,13 @@
 
 <div *ngIf="user">
   <h2>User Details</h2>
-  <form (ngSubmit)="updateUser()">
-    <table>
-      <tr>
-        <th>Name:</th>
-        <td><input type="text" [(ngModel)]="user.name"></td>
-      </tr>
-      <tr>
-        <th>Email:</th>
-        <td><input type="email" [(ngModel)]="user.email"></td>
-      </tr>
-      <tr>
-        <th>Password:</th>
-        <td><input type="password" [(ngModel)]="user.password"></td>
-      </tr>
-      <tr>
-        <th>Phone Number:</th>
-        <td><input type="text" [(ngModel)]="user.phoneNumber"></td>
-      </tr>
-      <tr>
-        <th>Address:</th>
-        <td><input type="text" [(ngModel)]="user.address"></td>
-      </tr>
-    </table>
+  <form (ngSubmit)="updateUser()">  
+    <input type="text" name="name" [(ngModel)]="updatedUser.name" placeholder="Name" required>
+    <input type="email" name="email" [(ngModel)]="updatedUser.email" placeholder="Email" required>
+    <input type="password" name="password" [(ngModel)]="updatedUser.password" placeholder="Password" required>
+    <input type="text" name="phoneNumber" [(ngModel)]="updatedUser.phoneNumber" placeholder="Phone Number">
+    <input type="text" name="address" [(ngModel)]="updatedUser.address" placeholder="Address">
+  
     <button type="submit">Update User</button>
   </form>
 </div>
